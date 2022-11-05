@@ -48,6 +48,7 @@ describe("Employee Manager 1.2", () => {
         await driver.wait(
             until.elementIsVisible(await driver.findElement(nameInput))
         );
+        //This section is where we are changing Bernice name and seeing it if handles unsaved, and saved changes correctly//
         await driver.findElement(nameInput).clear();
         await driver.findElement(nameInput).sendKeys("Test Name");
         await driver.findElement(phillip).click();
@@ -70,6 +71,7 @@ describe("Employee Manager 1.2", () => {
             await driver.wait(
                 until.elementIsVisible(await driver.findElement(nameInput))
             );
+            //We are seeing if canceling our changes defaults back to the original information//
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys("Test Name");
             await driver.findElement(cancelButton).click();
@@ -91,6 +93,7 @@ describe("Employee Manager 1.2", () => {
             await driver.wait(
                 until.elementIsVisible(await driver.findElement(nameInput))
             );
+            //Checking to see if changing the name and saving it to the changed name sticks correctly//
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys("Test Name");
             await driver.findElement(saveButton).click();
@@ -115,6 +118,7 @@ describe("Employee Manager 1.2", () => {
             await driver.wait(
                 until.elementIsVisible(await driver.findElement(nameInput))
             );
+            //Seeing if the proper error message pops up. I did have issues rememebering to put errorCard//
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys(Key.SPACE, Key.BACK_SPACE);
             await driver.findElement(saveButton).click();
@@ -137,6 +141,7 @@ describe("Employee Manager 1.2", () => {
             await driver.wait(
                 until.elementIsVisible(await driver.findElement(nameInput))
             );
+            //On this one I got confused where to put the save and cancel button. But I understand that we are trying to see if we can cancel an error message//
             await driver.findElement(nameInput).clear();
             await driver.findElement(nameInput).sendKeys(Key.SPACE, Key.BACK_SPACE);
             await driver.findElement(saveButton).click();
