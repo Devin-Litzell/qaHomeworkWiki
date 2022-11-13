@@ -15,7 +15,11 @@ const driver: WebDriver = new Builder()
 const google = new googlePage(driver, "https://www.google.com")
 
 test ("go a google search", async () =>{
-    await google.navigate()
-    await google.search('legos')
+    await google.navigate();
+    await google.doSearch('legos');
     await google.getResults
+});
+
+afterAll(async () =>{
+    await driver.quit();
 })
