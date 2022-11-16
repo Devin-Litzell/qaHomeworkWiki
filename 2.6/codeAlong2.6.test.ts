@@ -47,13 +47,9 @@ class employeePO {
 const emPage = new employeePO(driver)
 
 describe("Practicing PageObjects", () => {
-    beforeEach(async () => {
-        await emPage.navigate()
-    })
-    afterAll(async () => {
-        await driver.quit()
-    })
+  
     test("adding employees", async ()=> {
+        await emPage.navigate()
         await emPage.click(emPage.addEmployee)
         await emPage.click(emPage.newEmployee)
         await emPage.click(emPage.nameField)
@@ -61,5 +57,6 @@ describe("Practicing PageObjects", () => {
         await emPage.sendKeys(emPage.nameField, "Bob the Builder")
         await emPage.click(emPage.saveBtn)
         await driver.sleep(100);
+        await driver.quit()
     })
 })

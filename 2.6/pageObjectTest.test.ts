@@ -14,7 +14,7 @@ const driver: WebDriver = new Builder()
 
 const google = new googlePage(driver, "https://www.google.com")
 
-test ("go a google search", async () =>{
+test ("do a google search", async () =>{
     await google.navigate();
     await google.doSearch('legos');
     await google.getResults

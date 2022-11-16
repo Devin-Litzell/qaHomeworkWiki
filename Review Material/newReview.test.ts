@@ -20,7 +20,7 @@ let newInturns: Array<Inturns> = [
     new Inturns("Blossom", 1234567890, "Power Puff Girl"), 
     new Inturns("Buttercup", 1234567890, "Power Puff Girl"), 
     new Inturns("Bubbles", 1234567890, "Power Puff Girl"),
-    new Inturns("Miss Sara Bellum", 7889788978, "Secretary")
+    //new Inturns("Miss Sara Bellum", 7889788978, "Secretary")
 ]
 
 let addEmp = async (newInturns) => {
@@ -33,7 +33,6 @@ let addEmp = async (newInturns) => {
     await employeePage.click(employeePage.titleField)
     await employeePage.setInput(employeePage.titleField, newInturns.title)
     await employeePage.click(employeePage.saveBtn)
-    await employeePage.driver.sleep(3000)
 }
 
 describe("should add employees to employee manager", () => {
